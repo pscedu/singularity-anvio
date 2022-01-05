@@ -6,6 +6,8 @@
 ![License](https://img.shields.io/github/license/pscedu/singularity-anvio)
 
 # singularity-anvio
+<img src="https://merenlab.org/images/anvio-network.png" />
+
 Singularity recipe for [anvio](https://https://merenlab.org/software/anvio/).
 
 ## Installing the container on Bridges 2
