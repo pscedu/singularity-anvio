@@ -19,12 +19,14 @@ jobs:
     - name: Install useful utilities
       run: apk update && apk add --no-cache tree figlet wget
 
-    - name: Free disk space
-      run: |
-           rm -rf /opt/ghc
-           rm -rf /usr/local/lib/android
-           rm -rf /usr/share/dotnet
+- name: Free disk space
+    run: |
+         [ -d /opt/ghc ] && rm -rf /opt/ghc
+         [ -d /usr/local/lib/android ] && rm -rf /usr/local/lib/android
+         [ -d /usr/share/dotnet ] && rm -rf /usr/share/dotnet
+         if command -v docker &> /dev/null; then
            docker image prune -af
+         fi
 
     - name: Build and test container
       run: |
